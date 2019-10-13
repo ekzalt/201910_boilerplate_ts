@@ -1,0 +1,35 @@
+{
+  "name": "boilerplate-ts",
+  "version": "1.0.0",
+  "description": "Boilerplate for TypeScript projects with linter, build, tests",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf dist",
+    "lint": "tslint -c tslint.json src/**/*.ts",
+    "lint:fix": "tslint -c tslint.json --fix src/**/*.ts",
+    "compile": "npm run clean && npm run lint && tsc",
+    "build": "npm run compile && npm test",
+    "start": "node dist/index.js",
+    "start:dev": "ts-node src/index.ts",
+    "test": "jest src",
+    "test:cov": "jest src --coverage"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "rimraf": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.18",
+    "@types/node": "^12.7.11",
+    "jest": "^24.9.0",
+    "ts-jest": "^24.1.0",
+    "ts-node": "^8.4.1",
+    "tslint": "^5.20.0",
+    "typescript": "^3.6.3"
+  },
+  "jest": {
+    "preset": "ts-jest"
+  }
+}
